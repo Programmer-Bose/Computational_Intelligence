@@ -19,10 +19,10 @@ class KMeans:
             
             # Check for convergence
             if np.all(self.centroids == new_centroids):
-                print("centroids: " + self.centroids)
                 break
             
             self.centroids = new_centroids
+        return (self.centroids,self.labels)
 
     def plot_clusters(self):
         # Plot data points with different colors for each cluster
