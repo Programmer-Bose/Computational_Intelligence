@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class KMeans:
-    def __init__(self, k, max_iters=10):
+    def __init__(self, k, max_iters=100):
         self.k = k
         self.max_iters = max_iters
 
@@ -32,7 +32,8 @@ class KMeans:
             plt.scatter(cluster_data[:, 0], cluster_data[:, 1], label=f'Cluster {i + 1}')
 
         # Plot centroids
-        plt.scatter(self.centroids[:, 0], self.centroids[:, 1], marker='^', color='black', s=200, label='Centroids')
+        plt.scatter(self.centroids[:, 0], self.centroids[:, 1], marker='^', 
+                    color='black', s=200, label='Centroids')
         
         plt.title('K-Means Clustering')
         plt.legend()
